@@ -1,1 +1,42 @@
-<p>ver-pais works!</p>
+<div *ngIf="!pais; else divPais"
+class="alert alert-info">
+    Espere por favor.
+</div>
+
+<ng-template #divPais>
+    <div class="row">
+        <div class="col">
+            <h1>
+                Pais: <small>{{pais.name}}</small>
+            </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h3>Capital: </h3>
+            <h4>{{pais.capital}}</h4>
+        </div>
+        <div class="col">
+            <h3>Informacion: </h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Alpha code 2: </strong>{{pais.alpha2Code}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Alpha code 3: </strong>{{pais.alpha3Code}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Region: </strong>{{pais.region}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+   <!--  <pre class="mt-5">
+        {{pais | json}}
+    </pre> -->
+
+</ng-template>
+
+
